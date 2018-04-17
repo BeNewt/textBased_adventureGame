@@ -35,7 +35,10 @@ class Championships :
     def __init__(self, name):
         self.championships = championships 
 
-
+def checkInput(someInput):
+    print(str(len(someInput.strip())))
+    return someInput
+    
 print("Hello")
 
 
@@ -45,7 +48,10 @@ mass = {'Bayley': 119, 'Mustafa': 182, 'Asuka': 137, 'Hideo': 182, 'Tamina': 150
 print(wrestlers)
 print(mass)
 
+character_name = ''
+while character_name 
 character_name = input("Pick a Wrestler: ")
+
 opponent_name = input("Pick an Opponent: ")
 
 
@@ -80,29 +86,30 @@ print(championships)
 champ_name = input("Pick a Championship: ")
 
 
-if character_name in wrestlers:
-    player = Wrestler(wrestler_name, mass[wrestler_name])
+
+count = 0
+for x in wrestlers:
+    if x.lower() == character_name.lower():
+        if x != character_name:
+            character_name = character_name.title()
+        character = Wrestler(character_name, mass[character_name])
+        count += 1
+        # print(count)
+    del wrestlers[count]
     count = 0
-    
+
     for x in wrestlers:
-        if x == wrestler_name:
-            count += 1
-            print(count)
+        if x.lower() == opponent_name.lower():
+            if x != opponent_name:
+                opponent_name = opponent_name.title()
+        opponent = Wrestler(opponent_name, mass[opponent_name])
+        count += 1
+        # print(count)
     del wrestlers[count]
 
-if opponent_name in wrestlers:
-    opponent = Wrestler(opponent_name, mass[opponent_name])
-    count = 0
-    
-    for x in wrestlers:
-        if x == opponent_name:
-            count += 1
-            print(count)
-    del wrestlers[count]
 
 
-character = Wrestler(character_name, mass[character_name])
-opponent = Wrestler(opponent_name, mass[opponent_name])
+#opponent = Wrestler(opponent_name, mass[opponent_name])
 
 run = True
 
